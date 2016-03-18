@@ -1,0 +1,60 @@
+{% extends "_baselinks.htm" %}
+
+{% block title %} Google App Engine {% endblock %}
+
+{% block ul %}
+<ul>
+  <li> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+  {% else %}
+    <li><a href="/logout">Logout </a></li>
+  {% endifequal %}
+	
+  <li><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+</ul>
+
+
+ {% endblock %}
+
+{% block h2a %}<a href="gae.htm">Google App Engine</a>{% endblock %}
+
+{% block p %}
+Google App Engine (often referred to as GAE or simply App Engine) is a platform as a service (PaaS) cloud computing platform for developing and hosting web applications in Google-managed data centers. Applications are sandboxed and run across multiple servers. App Engine offers automatic scaling for web applications—as the number of requests increases for an application, App Engine automatically allocates more resources for the web application to handle the additional demand.<br/><br/>
+Google App Engine is free up to a certain level of consumed resources. Fees are charged for additional storage, bandwidth, or instance hours required by the application.
+
+{% endblock%}
+
+{% block links %}
+			<ul class="sidemenu">
+                                <li id="current"><a href="gae.htm">Google App Engine</a></li>
+                                <li><a href="armboard.htm">Raspberry Pi</a></li>
+                                <li><a href="zigbee.htm">Zigbee</a></li>
+                        
+                                <li><a href="hiw.htm">How It Works</a></li>
+                        </ul>
+{% endblock %}
+
+{% block wisep %}"Example is not the main thing in influencing other people; it’s the only thing."{% endblock %}
+
+{% block saidby %}– Abraham Lincoln {% endblock %}
+

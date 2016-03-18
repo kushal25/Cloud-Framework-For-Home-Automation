@@ -1,0 +1,49 @@
+{% extends "_base.htm" %}
+
+{% block title %} About Us {% endblock %}
+
+{% block ul %}
+<ul>
+  <li> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+  {% else %}
+    <li><a href="/logout">Logout </a></li>
+  {% endifequal %}
+	
+  <li id="current"><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+</ul>
+
+
+ {% endblock %}
+
+{% block h2a %}<a href="about.htm">Who are we??</a>{% endblock %}
+
+{% block p %}Lazy Bones is a Cloud Framework by which we control appliances with the power of the Google App Engine Cloud and the Raspberry Pi. We try to control home appliances as by now but since being its a framework our unique architecture can be applied from small houses to huge multiplexes and shopping malls.<br><br><h3><b>Mentor</b></h3><br><p>Mr.V.Ananthanarayanan, Asst. Professor(SR) Computer Science and Engineering, Amrita University, Coimbatore</p><br><h3>Group No: 40</h3><br><p size="8">Kushal Malani<br>Anisha S Bhat<br>Nithya N</p><br><p>Special Thanks!! to all the people who helped us when we required it the most.</p>
+
+{% endblock %}
+
+{% block wisep %}"Most great people have attained their greatest success just one step beyond their greatest failure."{% endblock %}
+
+{% block saidby %}- Napoleon Hill {% endblock %}
+
+

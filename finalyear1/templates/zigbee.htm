@@ -1,0 +1,59 @@
+{% extends "_baselinks.htm" %}
+
+{% block title %} Zigbee {% endblock %}
+
+{% block ul %}
+ <ul>
+  <li> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+  {% else %}
+    <li><a href="/logout">Logout </a></li>
+  {% endifequal %}
+	
+  <li><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+</ul>
+
+ {% endblock %}
+
+{% block h2a %}<a href="zigbee.htm">Zigbee</a>{% endblock %}
+
+{% block p %}
+ZigBee is a specification for a suite of high level communication protocols using small, low-power digital radios based on an IEEE 802 standard for personal area networks. ZigBee devices are often used in mesh network form to transmit data over longer distances, passing data through intermediate devices to reach more distant ones. This allows ZigBee networks to be formed ad-hoc, with no centralized control or high-power transmitter/receiver able to reach all of the devices. Any ZigBee device can be tasked with running the network.
+<br/><br/>ZigBee is targeted at applications that require a low data rate, long battery life, and secure networking. ZigBee has a defined rate of 250 kbit/s, best suited for periodic or intermittent data or a single signal transmission from a sensor or input device. Applications include wireless light switches, electrical meters with in-home-displays, traffic management systems, and other consumer and industrial equipment that requires short-range wireless transfer of data at relatively low rates. <br/><br/>The technology defined by the ZigBee specification is intended to be simpler and less expensive than other WPANs, such as Bluetooth or Wi-Fi.
+The name refers to the waggle dance of honey bees after their return to the beehive.
+
+{% endblock%}
+
+{% block links %}
+                        <ul class="sidemenu">
+                                <li><a href="gae.htm">Google App Engine</a></li>
+                                <li><a href="armboard.htm">Friendly Arm Board(mini 2440)</a></li>
+                                <li id="current"><a href="zigbee.htm">Zigbee</a></li>
+                                <li><a href="hiw.htm">How It Works</a></li>
+                        </ul>
+{% endblock %}
+
+{% block wisep %}"Defeat is not the worst of failures. Not to have tried is the true failure."{% endblock %}
+
+{% block saidby %}– George E. Woodberry {% endblock %}
+

@@ -1,0 +1,59 @@
+{% extends "_baselinks.htm" %}
+
+{% block title %} How It Works {% endblock %}
+
+{% block ul %}
+<ul>
+  <li> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+  {% else %}
+    <li><a href="/logout">Logout </a></li>
+  {% endifequal %}
+	
+  <li><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+</ul>
+
+
+ {% endblock %}
+8
+{% block h2a %}<a href="hiw.htm">How It Works</a>{% endblock %}
+
+{% block p %}
+
+<img src="static/architecture.jpg" width="500" height="300" alt="architecture"><br/>
+
+
+{% endblock%}
+
+{% block links %}
+                        <ul class="sidemenu">
+                                <li><a href="gae.htm">Google App Engine</a></li>
+                                <li><a href="armboard.htm">Raspberry Pi</a></li>
+                                <li><a href="zigbee.htm">Zigbee</a></li>              				<li id="current"><a href="hiw.htm">How It Works</a></li>
+                        </ul>
+{% endblock %}
+
+{% block wisep %}"Character consists of what you do on the third and fourth tries."{% endblock %}
+
+{% block saidby %}– James A. Michener {% endblock %}
+

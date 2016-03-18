@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W4C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<title>{% block title %}Replace this{%endblock %}</title>
+<link rel="stylesheet" href="static/lazybones.css" type="text/css">
+</head>
+<body>
+<!-- wrap starts here -->
+<div id="wrap">
+	<!--header -->
+	<div id="header">			
+		<h1 id="logo-text"><a href="home.htm" title="">Lazy Bones</a></h1>		
+		<p id="intro">For Controlling Appliances with the power of Cloud Computing and Raspberry pi</p>	
+		 <div id="nav">  
+                        {% block ul %} Replace this {% endblock %}
+                </div>
+
+		<form id="quick-search" action="home.htm" method="get">
+			<p>
+			<label for="qsearch">Search:</label>
+			<input class="tbox" id="qsearch" name="qsearch" placeholder="Search" title="Start typing and hit ENTER" type="text">
+			<input class="btn" value="Submit" type="submit">
+			</p>
+		</form>			
+	<!--header ends-->					
+	</div>
+	<!-- content-wrap starts -->
+	<div id="content-wrap">
+		<div id="main">
+			<a name="TemplateInfo"></a>
+			<h2>{% block h2a %} Replace this {% endblock %}</h2>	
+		        <p>{% block p %}Replace this {% endblock %}</p>
+	<!-- main ends -->	
+		</div>
+		<!-- sidebar starts -->
+		<div id="sidebar">
+			<h3>Links</h3>
+			<ul class="sidemenu">				
+				<li><a href="gae.htm">Google App Engine</a></li>
+				<li><a href="armboard.htm">Raspberry pi</a></li>
+				<li><a href="zigbee.htm">Zigbee</a></li>
+				<li><a href="hiw.htm">How It Works</a></li>
+			</ul>	
+			<h3>Wise Words</h3>
+			<p>{% block wisep %} Replace this {% endblock %} </p>
+			<p class="align-right">{% block saidby %}Replace this{% endblock %}</p>
+		<!-- sidebar ends -->		
+		</div>
+	<!-- content-wrap ends-->	
+	</div>
+	<!-- footer starts here -->	
+	<div id="footer-wrap"><div id="footer-content">
+		<div class="col float-left">
+			<p> &copy copyright 2012 <strong>Lazy Bones</strong><br>	
+               			|<a href="facebook.com">Facebook</a> |
+				<a href="twitter.com">Twitter</a> |
+				<a href="googleplus.com">Google Plus</a> |
+			</p>
+		</div>		
+	</div></div>
+
+	<div class="clearer"></div>
+	<!-- footer ends here -->
+<!-- wrap ends here -->
+</div>
+</body></html>
+                               

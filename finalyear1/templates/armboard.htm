@@ -1,0 +1,108 @@
+{% extends "_baselinks.htm" %}
+
+{% block title %} Raspberry pi {% endblock %}
+
+{% block ul %}
+<ul>
+  <li> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+  {% else %}
+    <li><a href="/logout">Logout </a></li>
+  {% endifequal %}
+	
+  <li><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+</ul>
+
+
+ {% endblock %}
+
+{% block h2a %}<a href="armboard.htm">Raspberry Pi</a>{% endblock %}
+
+{% block p %}
+
+<ul>
+<font size="2" color="red">
+<li><strong>Dimension:</strong> 100 x 100 mm</li>
+<li><strong>CPU:</strong> 400 MHz Samsung S3C2440A ARM920T (max freq. 533 MHz)</li>
+<li><strong>RAM:</strong> 64 MB SDRAM, 32 bit Bus</li>
+<li><strong>Flash:</strong> 64 MB / 128 MB / 256 MB / 1GB NAND Flash and 2 MB NOR Flash with BIOS</li>
+<li><strong>EEPROM:</strong> 1024 Byte (I2C)</li>
+<li><strong>Ext. Memory:</strong> SD-Card socket</li>
+<li><strong>Serial Ports:</strong> 1x DB9 connector (RS232), total: 3x serial port connectors</li>
+<li><strong>USB:</strong> 1x USB-A Host, 1x USB-B Device</li>
+<li><strong>Audio Output:</strong> 3.5 mm stereo jack</li>
+<li><strong>Audio Input:</strong> Connector + Condenser microphone</li>
+<li><strong>Ethernet:</strong> RJ-45 10/100M (DM9000)</li>
+<li><strong>RTC:</strong> Real Time Clock with battery</li>
+<li><strong>Beeper:</strong> PWM buzzer</li>
+<li><strong>Camera:</strong> 20 pin Camera interface (2.0 mm)</li>
+<li><strong>LCD Interface</strong>
+<ul>
+<li>STN Displays:
+<ul>
+<li>Monochrome, 4 gray levels, 16 gray levels, 256 colors, 4096 colors</li>
+<li>Max: 1024&#215;768</li>
+</ul>
+</li>
+<li>TFT Displays:
+<ul>
+<li>Monochrome, 4 gray levels, 16 gray levels, 256 colors, 64k colors, true color</li>
+<li>Max: 1024&#215;768</li>
+</ul>
+</li>
+<li>41 pin connector for FriendlyARM Displays (3.5&#8243; and 7&#8243;) and VGA Board</li>
+</ul>
+</li>
+<li><strong>Touch Panel:</strong> 4 wire resistive</li>
+<li><strong>User Inputs:</strong> 6x push buttons and 1x A/D pot</li>
+<li><strong>User Outputs:</strong> 4x LEDs</li>
+<li><strong>Expansion:</strong> 40 pin System Bus, 34 pin GPIO, 10 pin Buttons (2.0 mm)</li>
+<li><strong>Debug:</strong> 10 pin JTAG (2.0 mm)</li>
+<li><strong>Power:</strong> 5V connector, power switch and LED</li>
+<li><strong>Power Supply:</strong> regulated 5V (Mini2440: 0.3 A, Mini2440 + 3.5&#8243; LCD: 0.6 A, Mini2440 + 7&#8243; LCD: 1 A)</li>
+<li><strong>OS Support</strong>
+<ul>
+<li>Windows CE 5 and 6</li>
+<li>Linux 2.6</li>
+<li>Android</li>
+</ul>
+</li>
+</font>
+</ul>
+
+{% endblock%}
+
+{% block links %}
+                        <ul class="sidemenu">
+                                <li><a href="gae.htm">Google App Engine</a></li>
+                                <li id="current"><a href="armboard.htm">Friendly Arm Board(mini 2440)</a></li>
+                                <li><a href="zigbee.htm">Zigbee</a></li>
+                                <li><a href="hiw.htm">How It Works</a></li>
+                        </ul>
+{% endblock %}
+
+{% block wisep %}"Nothing great was ever achieved without enthusiasm."{% endblock %}
+
+{% block saidby %}- Ralph Waldo Emerson {% endblock %}
+
+

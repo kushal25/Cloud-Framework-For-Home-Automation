@@ -1,0 +1,62 @@
+{% extends "_base.htm" %}
+
+{% block title %} Login {% endblock %}
+
+{% block ul %}
+<ul>
+  <li> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li id="current"><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+  {% else %}
+    <li><a href="/logout">Logout</a></li>
+  {% endifequal %}
+	
+  <li><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+</ul>
+
+ {% endblock %}
+
+{% block h2a %}<a href="loginscreen.htm">Authentication Required</a>{% endblock %}
+
+{% block p %}
+	<font size="3" color="white">
+	<form method="post" action="/login">
+	 Enter your Name<br/><input type="text" name="name" placeholder="name"/><br/><br/>
+         Enter your Email Address<br/><input type="text" name="emailaddress" placeholder="email address"/><br/><br/>
+	 Enter your Password<br/><input type="password" name="password" placeholder="password" /><br/><br/>
+	
+	<input type="submit" value="Login"/>
+        <input type="submit" value="Cancel" 
+          onclick="window.location='/'; return false;"/>
+       </form>
+       </p>
+       {% ifnotequal error None %}
+        <p>
+        {{ error }}
+        </p>
+       {% endifnotequal %}
+{% endblock%}
+
+{% block wisep %}"Entrepreneurship is living a few years of your life like most people wont so you can spend the rest of your life like most people can’t "{% endblock %}
+
+{% block saidby %}- A Student in Warren G. Tracy's class {% endblock %}
+~                                                  

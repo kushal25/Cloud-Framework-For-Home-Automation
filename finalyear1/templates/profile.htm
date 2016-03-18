@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W4C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>{% block title %}Welcome{%endblock %}</title>
+<link rel="stylesheet" href="static/links.css" type="text/css">
+</head>
+<body>
+<!-- wrap starts here -->
+<div id="wrap">
+	<!--header -->
+	<div id="header">			
+	<div id="nav">	
+                        <ul>
+ 			    {% ifequal emailaddress None %}
+    			    <li><a href="/logout">Logout </a></li>
+			    {% endifequal %}	
+			</ul>
+    	</div>
+	<!--header ends-->								
+	</div>
+
+	<!-- content-wrap starts -->
+	<div id="content-wrap">
+		<div id="main">
+			<a name="TemplateInfo"></a>
+			<h2>Welcome {{username}}</h2><br/>	
+		        <p>
+			<form method="post" action="/profile">
+			<font size="4px" color="white">
+			Switches :
+			</font>
+			<select name="switches" >
+			<option value="1">Switch 1</option>
+			<option value="2">Switch 2</option>
+			<option value="3">Switch 3</option>
+			<option value="4">Switch 4</option>
+			<option value="5">Switch 5</option>
+			<option value="6">Switch 6</option>
+			<option value="7">Switch 7</option>
+			<option value="8">Switch 8</option>
+			<option value="9">Switch 9</option>
+			</select>
+			<br/>
+			<br/>
+			<font size="4px" color="white">
+			Operation :
+			</font>
+			<select name="operation">
+			<option value="on">ON </option>
+			<option value="off">OFF </option>
+			</select>
+			<br/>
+			<br/><br/>	
+			<Button type="send" id="send" value="send" style="height:30px;width:150px">Send</Button><br/><br/>
+			</form>
+			</p>
+		<!-- main ends -->	
+		</div>
+	<!-- content-wrap ends-->	
+	</div>
+	<!-- footer starts here -->	
+	<div id="footer-wrap"><div id="footer-content">
+		<div class="col float-left">
+			<p> &copy copyright 2012 <strong>Lazy Bones</strong><br>	
+               			|<a href="facebook.com">Facebook</a> |
+				<a href="twitter.com">Twitter</a> |
+				<a href="googleplus.com">Google Plus</a> |
+			</p>
+		</div>		
+	</div></div>
+
+	<div class="clearer"></div>
+	<!-- footer ends here -->
+<!-- wrap ends here -->
+</div>
+</body></html>
+                              
+ 

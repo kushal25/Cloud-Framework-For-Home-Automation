@@ -1,0 +1,107 @@
+{% extends "_base.htm" %}
+
+{% block title %} Join Us {% endblock %}
+
+{% block ul %}
+<ul>
+  <li> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li id="current"><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+
+  {% else %}
+    <li><a href="/logout">Logout</a></li>
+  {% endifequal %}
+	
+  <li><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+</ul>
+
+ {% endblock %}
+
+{% block h2a %}<a href="applyscreen.htm">Join Us and Become LAZY!!</a>{% endblock %}
+
+{% block p %}
+      <font size="3" color="white">  
+      <form method="post" action="/apply">
+      <p size="6"><b>Some basics to get you started</b></p><br/>
+      Name<br/><input type="text" name="name" placeholder="name"/><br/><br/> 
+      Board IP address<br/><input type="text" name="ipaddress" placeholder="ip address"/><br/><br/>
+      Email Address<br/><input type="text" name="emailaddress" placeholder="email address"/><br/><br/>
+      Mobile Number<br/><input type="text" name="mobilenumber" placeholder="mobile number"/><br/><br/>
+      Password<br/><input type="password" name="password" placeholder="password" /><br/><br/>
+      Re-enter Password<br/><input type="password" name="reenterpassword" placeholder="re-enter password"/><br/><br/>
+      
+ <!--    <p size="6"><b>A little Personal Info so we can serve you better</b></p><br/>
+      Date of Birth<br/><input type="text" size="2" name="day" placeholder="Day">
+                     <select name="months">
+		     <option value="months" selected="selected">month</option>
+		     <option value="jan">Jan</option>	
+		     <option value="feb">Feb</option>
+		     <option value="mar">Mar</option>
+ 		     <option value="apr">Apr</option>
+ 		     <option value="may">May</option>
+ 		     <option value="jun">June</option>
+		     <option value="jul">July</option>
+		     <option value="aug">Aug</option>
+		     <option value="sep">Sept</option>
+		     <option value="oct">Oct</option>
+		     <option value="nov">Nov</option>
+ 	             <option value="dec">Dec</option>
+		     </select>
+		     <input type="text" size="4" name="year" placeholder="Year"><br/><br/>
+      		     Gender<br/><select name="gender">
+                     <option value="gender" name ="gender" selected="selected">Gender</option>
+                     <option value="male">Male</option>
+                     <option value="female">Female</option></select><br/><br/>
+
+     <p size="6"><b>Incase You Forget Your Password</b></p><br/>
+		     Security Question<br/>
+	      	     <select name="security">
+                     <option value="Security" selected="selected">Select any one security question </option>
+                     <option value="1">Who is your favourite Actor</option>
+                     <option value="2">What is your Mothers maiden Name</option>
+                     <option value="3">What is the last name of your favourite teacher</option>
+                     <option value="4">Who is your role model</option>
+		     <option value="5">Where were you Born</option>
+		     <option value="6">What is your pet's name</option>
+		     <option value="7">Which is your favourite destination spot</option>
+		     <option value="8">Which is your favourite sport's team</option>
+		     <option value="9">What is your favourite food</option>
+		     </select><br/><br/>
+		     Answer<br/>
+		     <input type="text" name="answer"><br/><br/> -->
+    
+<font size="1">By proceeding, I agree to the Lazy Bones!<a href>Terms of Service</a> and <a href>Privacy Policy</a>.</font><br/>
+     <input type="submit" value="Signup" >
+     <input type="submit" value="Cancel" 
+         onclick="window.location='/';return false;">
+      </form>
+      </p>
+      {% ifnotequal error None %}
+       <p>
+       {{ error }}
+       </p>
+      {% endifnotequal %}
+{% endblock%}
+
+{% block wisep %}"Innovation distinguishes between a leader and a follower."{% endblock %}
+
+{% block saidby %}- Steve Jobs {% endblock %}

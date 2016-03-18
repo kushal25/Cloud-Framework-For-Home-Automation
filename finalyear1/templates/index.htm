@@ -1,0 +1,46 @@
+{% extends "_base.htm" %}
+
+{% block title %} Lazy Bones {% endblock %}
+
+{% block ul %} 
+<ul>
+  <li id="current"> <a href="/"
+    {% ifequal path '/' %}
+      class="selected"
+    {% endifequal %}
+     >Home</a></li>
+
+  <li><a href="/apply"
+    {% ifequal path '/apply' %}
+      class="selected"
+    {% endifequal %}
+     >Signup</a></li>
+
+  {% ifequal emailaddress None %}
+    <li><a href="/login"
+      {% ifequal path '/login' %}
+        class="selected"
+      {% endifequal %}
+        >Login</a></li>
+  {% else %}
+    <li><a href="/logout">Logout</a></li>
+  {% endifequal %}
+	
+  <li><a href="/about"
+    {% ifequal path '/about' %}
+      class="selected"
+    {% endifequal %}
+     >About</a></li>
+
+</ul>
+
+ {% endblock %}
+
+{% block h2a %}<a href="home.htm">Welcome To Lazy Bones</a>{% endblock %}
+
+{% block p %}Machines are given primary importance these days as they perform the given task easily and efficiently. Though machines help us get the work done, sometimes individual attention has to be given to each and every machine which becomes a burden when there are a large number of machines. If the machines are programmed, it makes the task much simpler. If these programmed machines can be accessed from anywhere in the world, it gives us more
+benefits.<br><br><br>In this context we present our research work on Cloud framework for energy management using automated appliances combining insights on remote monitoring and controlling. Our system helps controlling automated appliances from your smartphones using the power of internet.{% endblock%}
+
+{% block wisep %}"Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no help at all."{% endblock %}
+
+{% block saidby %}- Dale Carnegie {% endblock %}
